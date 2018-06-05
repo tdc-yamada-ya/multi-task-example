@@ -47,7 +47,7 @@ public class TaskExecutorTest {
 			reader = new BufferedReader(new InputStreamReader(getClass().getResourceAsStream("/data.txt")));
 		}
 
-		public Chunk<String> nextChunk() throws Exception {
+		public synchronized Chunk<String> nextChunk() throws Exception {
 			String line = reader.readLine();
 
 			if (line == null) {
